@@ -22,9 +22,9 @@ import java.util.GregorianCalendar;
 
 public class DatePickerFragment extends DialogFragment
 {
-    private static final String DATE_ARG = "Date";
+    private static final String DATE_ARG = "date";
 
-    private static final String EXTRA_DATE = "com.khalsa.gurankassingh.criminalintent";
+    public static final String EXTRA_DATE = "com.khalsa.gurankassingh.criminalintent.date";
 
     private DatePicker mDatePicker;
 
@@ -75,7 +75,7 @@ public class DatePickerFragment extends DialogFragment
             return;
         }
         Intent intent = new Intent();
-        intent.putExtra(EXTRA_DATE,date);
+        intent.putExtra(EXTRA_DATE, date.getTime());
 
         getTargetFragment().onActivityResult(getTargetRequestCode(), resultCode, intent);
     }
